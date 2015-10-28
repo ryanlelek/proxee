@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <title>Proxee - With Proxee</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="" />
+  <link type="text/css" rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+  <div id="container">
+
+    <div id="topbar" style="width: auto;">
+      <div class="fill">
+        <div class="fill_container">
+          <h2 style="float: left; margin-left: 20px;">With Proxee, you can iFrame whatever you like</h2>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      We dynamically add the iFrame address later with jQuery
+      To use a static url, just follow this format:
+      http://<host>[:<port>]/?proxy_url=<escaped-url>
+      Example: http://localhost:3000/?proxy_url=https%3A%2F%2Fmedium.com%2Fswlh%2Fturning-the-iphone-6s-into-a-digital-scale-f2197dc2b6e7%23.whp989ckm
+    -->
+    <iframe id="preview" src="" frameborder="0" width="100%" height="95%"></iframe>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // Grab the iFrame from above
+      var the_iframe = $("iframe#preview");
+
+      // Function to resize iFrame we grabbed
+      function resize_iframe () {
+        var viewportHeight = $(window).height();
+        // Subtract height of "top bar"
+        the_iframe.css({ height : viewportHeight - 80 })
+      }
+
+      // Resize the iFrame when the page loads
+      resize_iframe();
+
+      // Also, esize iFrame when the window is resized
+      $(window).resize(resize_iframe);
+
+      // #########################
+      // ##### Begin Content #####
+      // #########################
+
+      // Proxy Server
+      // Change this to whatever you like
+      // A local copy on your current computer
+      // or a global one on a domain
+      var proxy_host = "http://localhost:3000";
+
+      // URL you want goes here!
+      // Typed static, like below
+      // or generated from your application
+      var url_to_proxy = "https://medium.com/swlh/turning-the-iphone-6s-into-a-digital-scale-f2197dc2b6e7#.whp989ckm";
+
+      // Update the iFrame source accordingly
+      the_iframe.attr("src", proxy_host + "?proxy_url=" + encodeURIComponent(url_to_proxy));
+
+    });
+
+  </script>
+
+</body>
+</html>

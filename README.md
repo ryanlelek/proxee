@@ -11,9 +11,9 @@ A small, simple (and hacky) proxy server used to:
 
 # Example
 
-1) Start Proxee with `node index.js`
-2) Navigate to [http://localhost:3000/example.html](http://localhost:3000/example.html)
-3) See how iframing works with and without Proxee
+1. Start Proxee with `node index.js`
+2. Navigate to [http://localhost:3000/example.html](http://localhost:3000/example.html)
+3. See how iframing works with and without Proxee
 
 # Issues
 

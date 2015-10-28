@@ -131,7 +131,5 @@ var app = otto.app({
 
 });
 
-// HTTP Server
-// It will listen on port 3000 by default
-// Go to: http://localhost:3000/
-otto.server(app);
+// Exports
+module.exports = app;

@@ -1,0 +1,17 @@
+{
+  "name": "proxee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Lelek <ryanlelek@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "otto"          : "0.3.0",
+    "request"       : "2.65.0",
+    "html-entities" : "1.2.0",
+    "tough-cookie"  : "2.2.0"
+  }
+}
